@@ -4,12 +4,14 @@
 
     var ToolsJS = {
         Project: {
-            Type: null
+            Name: "My Project",
+            Description: "My Project",
+            Type: { Type: null, Image: null }
         },
 
         set: {
-            Type: function(type, img) {
-                ToolsJS.Project.Type = { Type: type, Image: img };
+            Type: function(type, img, name) {
+                ToolsJS.Project.Type = { Type: type, Image: img, Name: name };
             },
 
             Screen: function(name) {
@@ -23,7 +25,7 @@
         },
 
         event: [
-            // Scroll event
+            // Change screen event
             [ '.transition', 'click', function() {
                 var targetScroll = this.dataset.target;
                 if (!targetScroll)
@@ -32,16 +34,29 @@
                 ToolsJS.set.Screen(targetScroll);
             } ],
 
+            // Update name/desc
+            [ '#SubmitDetails', 'click', function() {
+                var name = $("#P-Name").val();
+                var desc = $("#P-Desc").val();
+
+                ToolsJS.Project.Name = name;
+                ToolsJS.Project.Desc = desc;
+            } ],
+
             // Selected Project type
             ['#TypeSelect > .choice', 'click', function() {
                 var projectType = PROJECT_TYPES[$(this).data('pt')];
-                var img = $(this).attr('src');
+                var img = $(this).find('img').attr('src');
+                var name = $(this).find('span').text();
 
                 if (!projectType)
                     throw new TypeError("`data-pt` must be a valid project type identifier.");
                 
+                $(".Type-Image").attr('src', img);
+                $(".Type-TypeName").html(name);
+
                 // Set project type
-                ToolsJS.set.Type(projectType, img);
+                ToolsJS.set.Type(projectType, img, name);
             } ]
         ]
     };

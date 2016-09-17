@@ -3,6 +3,7 @@
     <head>
         <title>Tools.js - Quickstart your Project</title>
         <link rel="stylesheet" href="./style.css">
+        <script src="https://use.fontawesome.com/ea412fe9ae.js"></script>
         <script src="./event.js"></script>
         <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     </head>
@@ -13,21 +14,52 @@
             <h3>Select your project type to get started.</h3>
 
             <div id="TypeSelect" class="Selection">
-                <div class="choice transition" data-target="Module" data-pt="NODEJS">
+                <div class="choice transition" data-target="Detail" data-pt="NODEJS">
                     <img src="./img/globe.svg">
                     <span>Browser</span>
                 </div>
 
-                <div class="choice transition" data-target="Module" data-pt="BROWSER">
+                <div class="choice transition" data-target="Detail" data-pt="BROWSER">
                     <img src="./img/nodejs.svg">
                     <span>Node.js</span>
                 </div>
             </div>
         </div>
 
+        <!-- Project Description Page -->
+        <div id="Page-Detail" class="Page Overview">
+            <div class="Overview">
+                <h1>Describe Your Project</h1>
+                <h3>Before we can start, describe your project a little.</h3>
+                
+                <input id="P-Name" type="text" class="biginput thick" placeholder="Project Name...">
+                <input id="P-Desc" type="text" class="biginput" placeholder="Project Description...">
+                <button id="SubmitDetails" class="biginput transition" data-target="Module"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+            </div>
+        </div>
+
         <!-- Module Page -->
         <div id="Page-Module" class="Page">
-            Test
+            <!-- Header -->
+            <div>
+                <div>
+                    <img class="Type-Image">
+                    <h2 class="inline Type-TypeName"></h2>
+                </div>
+                <div> Part 2 </div>
+                <div> Part 3 </div>
+            </div>
+
+            <!-- Module Body -->
+            <div>
+            </div>
+
+            <!-- Footer -->
+            <div>
+                <div> Part 1 </div>
+                <div> Part 2 </div>
+                <div> Part 3 </div>
+            </div>
         </div>
 
         <!-- Success Page -->

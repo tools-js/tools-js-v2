@@ -92,3 +92,80 @@ body * {
 
 
 .Selection > .choice:first-child { margin-left: 0; }
+
+input[type=text].biginput {
+    display: block;
+    border: none;
+    outline: none;
+    background: #F0F0F0;
+    border-bottom: 0.2em solid #EAEAEA;
+    font-size: 1.25em;
+    line-height: 1.25;
+    padding: 0.4em 1em;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+    width: 100%;
+
+    font-family: "Open Sans", "Lato", sans-serif;
+}
+
+input[type=button].biginput, button.biginput {
+    border: none;
+    background: #7dd744;
+    border-bottom: 0.2em solid #6fbe3c;
+    font-size: 1.25em;
+    line-height: 1.25;
+    padding: 0.4em 1em;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.thick {
+    font-family: "Montserrat", "Open Sans", sans-serif !important;
+}
+
+.inline {
+    display: inline;
+}
+
+input[type=button].biginput:active, button.biginput:active {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+#Page-Module {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#Page-Module > div {
+    width: 100%;
+    flex: 1 0 auto;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#Page-Module > div > div {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
+}
+
+#Page-Module > div > div > *:not(:last-child) {
+    margin-right: 0.75em;
+}
+
+#Page-Module > div:first-child, #Page-Module > div:last-child {
+    height: 4em;
+    flex: 0 0 auto;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
