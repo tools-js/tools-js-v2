@@ -8,8 +8,24 @@
         <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     </head>
     <body>
-        <!-- Selector Page -->
+        <!-- Loading Page -->
         <div class="Page Overview">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+
+        <!-- Error Page -->
+        <div id="Page-Error" class="Page Overview">
+            <h1 class="giant Error-Code">404</h1>
+            <h1>We're sorry <span class="emoticon">:/</span></h1>
+            <h3>An error occured while retrieving data files.</h3>
+        </div>
+
+        <!-- Selector Page -->
+        <div id="Page-Welcome" class="Page Overview">
             <h1>Welcome to Tools.js</h1>
             <h3>Select your project type to get started.</h3>
 
@@ -34,7 +50,7 @@
                 
                 <input id="P-Name" type="text" class="biginput thick" placeholder="Project Name...">
                 <input id="P-Desc" type="text" class="biginput" placeholder="Project Description...">
-                <button id="SubmitDetails" class="biginput transition" data-target="Module"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                <button id="SubmitDetails" class="biginput"><i class="fa fa-arrow-right" aria-hidden="true" title="Continue"></i></button>
             </div>
         </div>
 
@@ -43,15 +59,43 @@
             <!-- Header -->
             <div>
                 <div>
-                    <img class="Type-Image">
-                    <h2 class="inline Type-TypeName"></h2>
+                    <img class="space Type-Image">
+                    <h2 class="inline medium Type-TypeName"></h2>
                 </div>
-                <div> Part 2 </div>
-                <div> Part 3 </div>
+                <div class="padded-box">
+                    <h1 class="Proj-Title clip"></h1>
+                    <i class="fa fa-pencil pad button transition" data-target="Detail" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <i class="fa fa-share-alt button" aria-hidden="true" title="Share..."></i>
+                </div>
             </div>
 
             <!-- Module Body -->
             <div>
+
+                <!-- Module Filter-->
+                <div class="Sidebar">
+                    <h4>Filter</h4>
+                    <!-- Type List -->
+                    <div>
+                        <b>Type</b>
+                        <ul id="Type-Filter">
+                            <li>Foo</li>
+                            <li>bar</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module Browser -->
+                <div class="Body">
+                    <!-- Module Template -->
+
+                    <div id="Module-Template">
+                    </div>
+
+                </div>
+
             </div>
 
             <!-- Footer -->
