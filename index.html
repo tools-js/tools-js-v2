@@ -3,7 +3,8 @@
     <head>
         <title>Tools.js - Quickstart your Project</title>
         <link rel="stylesheet" href="./style.css">
-        <script src="./actions"></script>
+        <script src="./event.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     </head>
     <body>
         <!-- Selector Page -->
@@ -11,13 +12,13 @@
             <h1>Welcome to Tools.js</h1>
             <h3>Select your project type to get started.</h3>
 
-            <div class="Selection">
-                <div class="choice">
+            <div id="TypeSelect" class="Selection">
+                <div class="choice transition" data-target="Module" data-pt="NODEJS">
                     <img src="./img/globe.svg">
                     <span>Browser</span>
                 </div>
 
-                <div class="choice">
+                <div class="choice transition" data-target="Module" data-pt="BROWSER">
                     <img src="./img/nodejs.svg">
                     <span>Node.js</span>
                 </div>
@@ -25,6 +26,9 @@
         </div>
 
         <!-- Module Page -->
+        <div id="Page-Module" class="Page">
+            Test
+        </div>
 
         <!-- Success Page -->
     </body>

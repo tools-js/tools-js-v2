@@ -35,6 +35,10 @@ body * {
     height: 100%;
 }
 
+.Page.Hidden {
+    position: absolute;
+}
+
 .Overview {
     display: flex;
     flex-direction: column;
@@ -70,6 +74,14 @@ body * {
 
     padding: 0.7em;
     box-sizing: border-box;
+
+    -webkit-transition: linear background 0.2s;
+    transition: linear background 0.15s;
+}
+
+.Selection > .choice:hover {
+    cursor: pointer;
+    background: #EBECEC;
 }
 
 .Selection > .choice > img {
@@ -77,5 +89,6 @@ body * {
     flex: 1 1 0;
     margin-bottom: 1em;
 }
+
 
 .Selection > .choice:first-child { margin-left: 0; }
