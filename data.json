@@ -6,9 +6,10 @@
         {
             "name": "Babel",
             "desc": "The compiler for writing next generation JavaScript.",
-            "type": "transpiler",
+            "type": "Transpiler",
             
             "links": {
+                "logo": "Babel.svg",
                 "site": "https://babeljs.io",
                 "github": "https://github.com/babel/babel"
             },
@@ -26,6 +27,12 @@
                     }
                 }
             }
+        },
+
+        {
+            "name": "Grunt",
+            "desc": "The JavaScript Task Runner",
+            "type": "Build Tools"
         }
     ]
 }

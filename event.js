@@ -3,6 +3,40 @@
     var PROJECT_TYPES = { NODEJS: 1, BROWSER: 2 };
     var CUR_PAGE;
 
+    function getTemplate(parentID) {
+        var template = $('#' + parentID + '>:first-child');
+
+        if (template.hasClass('Template')) {
+            template.removeClass('Template');
+            template.remove();
+        }
+
+        return template;
+    }
+
+    function ProcessData() {
+        var data = ToolsJS.RawData[String(ToolsJS.Project.Type.Type)];
+        var item;
+        for (var i = 0; i < data.length; i++) {
+            item = data[i];
+            
+            var type = item.type;
+
+            // Populate lists
+            if (ToolsJS.Data.types.indexOf(item.type) === -1) {
+                ToolsJS.Data.types.push(item.type);
+            }
+        }
+    }
+
+    function GenerateScreen() {
+        // Generate filters
+        var filter_type = getTemplate("Type-Filter");
+        for (var i = 0; i < ToolsJS.Data.types.length; i++) {
+            $("#Type-Filter").append(filter_type.clone().html(ToolsJS.Data.types[i]));
+        }
+    }
+
     var ToolsJS = {
         Project: {
             Name: "My Project",
@@ -10,9 +44,15 @@
             Type: { Type: null, Image: null }
         },
 
+        Data: {
+            types: []
+        },
+
         set: {
             Type: function(type, img, name) {
                 ToolsJS.Project.Type = { Type: type, Image: img, Name: name };
+                ProcessData();
+                GenerateScreen();
             },
 
             Screen: function(name) {
@@ -93,7 +133,7 @@
             dataType: 'json',
 
             success: function(data) {
-                ToolsJS.Data = data;
+                ToolsJS.RawData = data;
                 ToolsJS.set.Screen("Welcome");
             },
 
