@@ -16,6 +16,8 @@
 
     function ProcessData() {
         var data = ToolsJS.RawData[String(ToolsJS.Project.Type.Type)];
+        ToolsJS.Data.Items = data;
+
         var item;
         for (var i = 0; i < data.length; i++) {
             item = data[i];
@@ -34,6 +36,28 @@
         var filter_type = getTemplate("Type-Filter");
         for (var i = 0; i < ToolsJS.Data.types.length; i++) {
             $("#Type-Filter").append(filter_type.clone().html(ToolsJS.Data.types[i]));
+        }
+
+        // Update grid
+        var grid_item = getTemplate("Body");
+        var it;
+        var ci;
+
+        for (var i = 0; i < ToolsJS.Data.Items.length; i++) {
+            it = grid_item.clone();
+            ci = ToolsJS.Data.Items[i];
+
+            if (ci.links && ci.links.logo) {
+                it.find('[data-id=title]').html('<img src=\"./assets/logo/' + ToolsJS.Data.Items[i].links.logo + '\"/>')
+            } else {
+                it.find('[data-id=title]').html('<h1>'+ci.name+'</h1>')
+            }
+
+            it.find('[data-id=desc]').html(ci.desc || "");
+
+            it.attr('data-entryid', i);
+
+            $("#Body").append(it);
         }
     }
 

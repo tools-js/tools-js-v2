@@ -38,10 +38,6 @@ h5 {
     color: #7a92ce;
 }
 
-body * {
-    overflow: auto;
-}
-
 .Page {
     width: 100%;
     height: 100%;
@@ -54,6 +50,8 @@ body * {
 .Overview {
     display: flex;
     flex-direction: column;
+
+    overflow: auto;
 
     align-items: center;
     justify-content: center;
@@ -117,6 +115,8 @@ input[type=text].biginput {
     margin-bottom: 1em;
     box-sizing: border-box;
     width: 100%;
+
+    overflow: auto;
 
     font-family: "Open Sans", "Lato", sans-serif;
 }
@@ -246,6 +246,10 @@ input[type=button].biginput:active, button.biginput:active {
     border-top: 1px solid #EBECEC;
 }
 
+#Page-Module > div:nth-child(2) {
+    flex: 1 0 auto;
+}
+
 #Page-Module > div:nth-child(2) > div {
     display: inline-block;
 }
@@ -264,10 +268,6 @@ input[type=button].biginput:active, button.biginput:active {
 
 #Sidebar * {
     overflow: initial;
-}
-
-#Body {
-    width: 100%;
 }
 
 ul {
@@ -309,35 +309,85 @@ img.space {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: flex-start;
+
+    width: 100%;
 
     padding: 1.5em;
 }
 
-#Module-Template {
+.Module-Template {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
-    border: 5px solid #EBECEC;
+    box-sizing: border-box;
+    margin: 0.5em;
+    width: 25%;
+
+    overflow: hidden;
+    border-radius: 0.5em;
+    border: 1px solid #EBECEC; 
+
+    padding: 0.5em 0.57em 0.75em 0.75em;
 }
 
-#Module-Template > div {
+.Module-Template > div {
     flex: 1 0 auto;
 }
 
+.Module-Template > div:first-child {
+    display: flex;
+    flex-direction: row;
+}
+
+.Module-Template > div:first-child > div {
+    flex: 1 0 auto;
+    width: 50%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.Module-Template > div:first-child > div:last-child > i {
+    font-size: 1.25em;
+}
+
+.Module-Template > div:first-child > div:last-child > i:not(:last-child) {
+    padding-right: 0.75em;
+    border-right: 1px solid #EBECEC;
+    margin-right: 0.5em;
+}
+
+.Module-Template > div:last-child > p {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    font-size: 0.9em;
+}
+
+.Add {
+    background: #80D54E;
+}
+
+.Info {
+    background: #e8e14e;
+}
+
 /**
- * The MIT License (MIT)
+ *? The MIT License (MIT)
  *
  * Copyright (c) 2015 Tobias Ahlin
- *
+ *?
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
- * the Software without restriction, including without limitation the rights to
+ * >the Software without restriction, including without limitation the rights to
  * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
  * the Software, and to permit persons to whom the Software is furnished to do so,
- * subject to the following conditions:
+ * s>ubject to the following conditions:
  *
  * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
+ * co>pies or substantial portions of the Software.
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
