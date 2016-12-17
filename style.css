@@ -494,4 +494,8 @@ img.space {
     #Sidebar.show {
         display: block;
     }
+
+    #ShareOptions {
+        display: none !important;
+    }
 }
