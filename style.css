@@ -14,6 +14,11 @@ html, body {
     background: #FBFBFC;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
 }
@@ -51,6 +56,8 @@ h5 {
     display: flex;
     flex-direction: column;
 
+    max-width: 85%;
+
     overflow: auto;
 
     align-items: center;
@@ -60,6 +67,8 @@ h5 {
 .Selection {
     display: flex;
     flex-direction: row;
+
+    max-width: 100%;
     
     padding: 3em;
 }
@@ -100,6 +109,10 @@ h5 {
     margin-bottom: 1em;
 }
 
+#ViewSidebar {
+    display: none !important;
+    width: 16em !important;
+}
 
 .Selection > .choice:first-child { margin-left: 0; }
 
@@ -198,6 +211,9 @@ input[type=button].biginput:active, button.biginput:active {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+
+    z-index: 1;
+    background: #FBFBFC;
 }
 
 #Page-Module > div {
@@ -244,6 +260,8 @@ input[type=button].biginput:active, button.biginput:active {
 
 #Page-Module > div:last-child {
     border-top: 1px solid #EBECEC;
+    z-index: 1;
+    background: #FBFBFC;
 }
 
 #Page-Module > div:nth-child(2) {
@@ -259,6 +277,8 @@ input[type=button].biginput:active, button.biginput:active {
     overflow: initial;
     width: auto;
     padding: 1em;
+
+    flex: 1 0 auto;
 
     border-right: 1px solid #EBECEC;
 }
@@ -376,7 +396,7 @@ img.space {
 
 .Info {
     background: #e8e14e;
-}===
+}
 
 /**
  *? The MIT License (MIT)
@@ -452,10 +472,26 @@ img.space {
     .Module-Wrapper {
         width: 100%;
     }
-}
 
-@media only screen and (max-width: 550px) {
     .Type-TypeName.medium {
         display: none;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    #ViewSidebar {
+        display: flex !important;
+    }
+
+    #Sidebar {
+        display: none;
+
+        position: absolute;
+        background: white;
+        height: inherit;
+    }
+
+    #Sidebar.show {
+        display: block;
     }
 }

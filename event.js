@@ -141,6 +141,13 @@
 
                 // Set project type
                 ToolsJS.set.Type(projectType, img, name);
+            } ],
+
+            // == Mobile ==
+            
+            // Button to show/hide sidebar
+            ['#ViewSidebar', 'click', function() {
+                $("#Sidebar").toggleClass("show");
             } ]
         ]
     };
