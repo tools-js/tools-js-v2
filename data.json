@@ -33,7 +33,18 @@
             "name": "Grunt",
             "desc": "The JavaScript Task Runner",
             "type": "Build Tools"
-        }
+        },
 
+        {
+            "name": "Gulp",
+            "desc": "The JavaScript Task Runner",
+            "type": "Build Tools"
+        },
+
+        {
+            "name": "Webpack",
+            "desc": "The JavaScript packager",
+            "type": "Browser"
+        }
     ]
 }

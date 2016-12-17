@@ -247,11 +247,12 @@ input[type=button].biginput:active, button.biginput:active {
 }
 
 #Page-Module > div:nth-child(2) {
-    flex: 1 0 auto;
+    flex: 0 1 auto;
+    height: 100%;
 }
 
 #Page-Module > div:nth-child(2) > div {
-    display: inline-block;
+    overflow: scroll;
 }
 
 #Sidebar {
@@ -306,24 +307,19 @@ img.space {
 
 #Body {
     display: flex !important;
-    flex-direction: row;
+
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
+    align-content: flex-start;
+}
 
-    width: 100%;
+.Module-Wrapper {
+    width: 33%;
+    padding: 1em;
 
-    padding: 1.5em;
+    box-sizing: border-box;
 }
 
 .Module-Template {
-    display: flex;
-    flex-direction: column;
-
-    box-sizing: border-box;
-    margin: 0.5em;
-    width: 25%;
-
     overflow: hidden;
     border-radius: 0.5em;
     border: 1px solid #EBECEC; 
@@ -335,14 +331,22 @@ img.space {
     flex: 1 0 auto;
 }
 
+.Module-Template > div:last-child {
+    padding: 0.5em 0em;
+    /* height: 2em; */
+}
+
 .Module-Template > div:first-child {
     display: flex;
     flex-direction: row;
+
+    height: 5em;
+    box-sizing: border-box;
 }
 
 .Module-Template > div:first-child > div {
-    flex: 1 0 auto;
-    width: 50%;
+    flex: 1 1 auto;
+    min-width: 30%;
 
     display: flex;
     flex-direction: row;
@@ -372,7 +376,7 @@ img.space {
 
 .Info {
     background: #e8e14e;
-}
+}===
 
 /**
  *? The MIT License (MIT)
@@ -436,4 +440,22 @@ img.space {
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
   }
+}
+
+@media only screen and (max-width: 975px) {
+    .Module-Wrapper {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .Module-Wrapper {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .Type-TypeName.medium {
+        display: none;
+    }
 }
