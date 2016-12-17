@@ -330,6 +330,8 @@ img.space {
 
     flex-wrap: wrap;
     align-content: flex-start;
+
+    width: 100%;
 }
 
 .Module-Wrapper {
