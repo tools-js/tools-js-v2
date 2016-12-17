@@ -239,6 +239,7 @@ input[type=button].biginput:active, button.biginput:active {
 .clip {
     white-space: nowrap;
     text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .padded-box {
